@@ -1,9 +1,30 @@
 import Tag from "@/components/Tag";
+import { data1, data2, topPost } from "@/data/data-index";
+import Image from "next/image";
+import Advertise1 from '@/public/images/single/advertise1.png'
+import Advertise2 from '@/public/images/single/advertise2.png'
 
 const tags = ['Montenegro', 'Visit Croatia', 'Luxury Travel', 'Travel Log', 'Paradise Island', 'Travel Info']
-const topPost = ['image', 'image', 'image', 'image', 'image']
 
-const Single = () => {
+const getData = (id) => {
+    if (!id) return
+    let obj = null;
+
+    if (id < 4) {
+        obj = data1.filter(item => item.id == id)
+    } else {
+        obj = data2.filter(item => item.id == id)
+    }
+
+    return obj[0]
+}
+
+const Single = ({ params }) => {
+
+    if (!params.id) alert('Invalid Id')
+
+    const obj = getData(params.id)
+
     return (
         <div className="h-full w-full">
             <div className="w-full flex gap-2 pb-12 text-[12px] font-normal">
@@ -33,13 +54,18 @@ const Single = () => {
 
                     {/* User */}
                     <div className="h-[117px] w-full rounded-12 bg-[#F5F5F5] p-3 flex gap-2 justify-start">
-                        <div className="h-[72px] w-[72px] bg-white rounded-12">left</div>
+                        <div className="h-[72px] w-[72px] bg-white rounded-12">
+                            <Image
+                                src={obj.user.avatar}
+                                className="h-full w-full"
+                            />
+                        </div>
                         <div className="flex flex-col justify-between w-[68%]">
                             <div className="flex justify-between">
-                                <p className="text-[14px]">Joshua Gholom</p>
+                                <p className="text-[14px]">{obj.user.name || 'Joshua Himmich'}</p>
                                 <p className="text-[12px] opacity-75">27 Posts</p>
                             </div>
-                            <button className="bg-[#F81539BF] rounded-12 h-10 w-20 gap-1 center-xy">
+                            <button className="bg-[#F81539BF] rounded-12 h-10 w-20 gap-1 center-xy cursor-pointer">
                                 <p className="text-[20px] text-white">+</p>
                                 <p className="text-[14px] text-white">Follow</p>
                             </button>
@@ -59,7 +85,12 @@ const Single = () => {
 
                         {topPost.map(item => (
                             <div className="h-[117px] w-full rounded-12 bg-[#F5F5F5] p-3 flex gap-2 justify-start">
-                                <div className="h-[72px] w-[72px] bg-white rounded-12">left</div>
+                                <div className="h-[72px] w-[72px] bg-white rounded-12">
+                                    <Image
+                                        src={item}
+                                        className="rounded-12"
+                                    />
+                                </div>
                                 <div className="flex flex-col justify-between w-[68%]">
                                     <div className="flex flex-col justify-between gap-2">
                                         <p className="text-[11px]">How to Spend the Perfect Day on Croatia’s Most Magical Island</p>
@@ -69,8 +100,30 @@ const Single = () => {
                             </div>
                         ))}
                     </div>
-                    <div className="min-h-[180px] w-full rounded-12 bg-[#F5F5F5]">Advertising</div>
-                    <div className="min-h-[180px] w-full rounded-12 bg-[#F5F5F5]">Advertising</div>
+
+
+                    <div className="w-full rounded-12 bg-[#F5F5F5] relative">
+                        <Image
+                            src={Advertise1}
+                            className="rounded-12"
+                            alt="advertise"
+                        />
+                        <div className="absolute center-tr">
+                            <p className="text-white text-[16px]">Advertising</p>
+                            <p className="text-white text-[12px]">360 px * 180px</p>
+                        </div>
+                    </div>
+                    <div className="w-full rounded-12 bg-[#F5F5F5] relative">
+                        <Image
+                            src={Advertise2}
+                            className="rounded-12"
+                            alt="advertise"
+                        />
+                        <div className="absolute center-tr">
+                            <p className="text-white text-[16px]">Advertising</p>
+                            <p className="text-white text-[12px]">360 px * 180px</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

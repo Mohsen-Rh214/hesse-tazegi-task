@@ -1,14 +1,17 @@
 import Image from 'next/image';
 
-const Slider = ({data}) => {
+const Slider = ({ data }) => {
 
-    return (
-          <Image
-            className='w-[33vw] h-[38.5vh] rounded-12'
-            src={data[2].picture}
-            alt='Tech Image'
-          />
-    )
+  return (
+    <div className='w-[38.75vw]'>
+      <Image
+        className='rounded-12'
+        src={data[2].picture}
+        alt='Tech Image'
+        objectFit='contain'
+      />
+    </div>
+  )
 }
 
 export default Slider;
