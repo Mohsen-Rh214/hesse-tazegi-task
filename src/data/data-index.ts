@@ -1,4 +1,3 @@
-import { StaticImageData } from 'next/image';
 import TechImg from '@/public/images/index/tech-img.png';
 import CarImg from '@/public/images/index/card-car.png'
 import MusicImg from '@/public/images/index/card-music.png'

@@ -2,10 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+p,h1,h2,h3,h4 {
+    color: #3E3232
+}
 
 @layer utilities {
     .rounded-12 {
-        @apply rounded-[12px]
+        @apply rounded-[12px];
     }
 }
 
@@ -17,5 +20,26 @@
         overflow: hidden;
         text-overflow: ellipsis;
         -webkit-box-orient: vertical;
+    }
+}
+
+@layer components {
+    .center-xy {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .center-xyy {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+@layer components {
+    .red-dot {
+        @apply bg-[#F81539] h-[10px] w-[4px] rounded-12;
     }
 }

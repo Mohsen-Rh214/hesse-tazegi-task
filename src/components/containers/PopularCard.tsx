@@ -16,12 +16,12 @@ const PopularCard = ({ pic, desc, details, user }: props) => {
                 className='w-[97%] pt-1 h-[48.84%] rounded-12'
             />
             <div className='max-h-42px max-w-[95%]'>
-                <p className='text-[13px] text-[##3E3232] text-start truncate'>
+                <p className='text-[13px] text-start truncate'>
                     {desc}
                 </p>
             </div>
             <div className='max-h-[46px] max-w-[95%]'>
-                <p className='text-[11.4px] text-[##3E3232] opacity-75 text-justify line-ellipsis'>
+                <p className='text-[11.4px] opacity-75 text-justify line-ellipsis'>
                     {details}
                 </p>
             </div>
