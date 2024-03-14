@@ -57,7 +57,7 @@ const Single = ({ params }) => {
                         <div className="h-[72px] w-[72px] bg-white rounded-12">
                             <Image
                                 src={obj.user.avatar}
-                                className="h-full w-full"
+                                className="h-full w-full rounded-12"
                             />
                         </div>
                         <div className="flex flex-col justify-between w-[68%]">
