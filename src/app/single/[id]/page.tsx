@@ -3,6 +3,10 @@ import { data1, data2, topPost } from "@/data/data-index";
 import Image from "next/image";
 import Advertise1 from '@/public/images/single/advertise1.png'
 import Advertise2 from '@/public/images/single/advertise2.png'
+import Link from "next/link";
+import ShareSvg from '@/public/icons/share.svg'
+import CommentSvg from '@/public/icons/comment.svg'
+import SaveSvg from '@/public/icons/save-light.svg'
 
 const tags = ['Montenegro', 'Visit Croatia', 'Luxury Travel', 'Travel Log', 'Paradise Island', 'Travel Info']
 
@@ -28,28 +32,49 @@ const Single = ({ params }) => {
     return (
         <div className="h-full w-full">
             <div className="w-full flex gap-2 pb-12 text-[12px] font-normal">
-                <p>{'Home  >  Featured  > '}</p>
-                <p className="opacity-50">{'How to spend a night in ghana'}</p>
+                <Link href={{
+                    pathname: '/',
+                }}>Home</Link>
+                <p>{'  >  Featured  > '}</p>
+                <p className="opacity-50">{obj?.title}</p>
             </div>
             <div className="h-full w-full flex gap-4 justify-between">
 
                 <div className="h-full w-[74.6%] flex flex-col">
                     {/* Header */}
                     <div className="h-[65vh]">
-                        <div className="h-[55vh] w-full bg-[#F5F5F5] rounded-12">
+                        <div className="h-[55vh] w-full bg-[#F5F5F5] rounded-12 relative p-2">
 
+                            <h1 className="text-[25px] font-semibold p-3">{obj?.title}</h1>
+
+                            <div className="absolute top-[100px] center-x w-full h-[55vh]">
+                                <Image
+                                    src={obj?.singlePic || obj?.picture}
+                                    className="rounded-12 w-[90%] max-h-full"
+                                    alt={obj?.title}
+                                />
+                            </div>
                         </div>
                     </div>
 
-                    <div className="">Content</div>
+                    <div className="mt-[10vh]">Content</div>
                 </div>
 
                 {/* Right Column */}
                 <div className="h-full w-[23.8%] flex flex-col gap-5">
                     <div className="flex justify-between text-[11px] opacity-75">
-                        <div className="h-9 w-[90px] rounded-12 bg-[#F5F5F5] center-xy">Share</div>
-                        <div className="h-9 w-[90px] rounded-12 bg-[#F5F5F5] center-xy">Marketing</div>
-                        <div className="h-9 w-[90px] rounded-12 bg-[#F5F5F5] center-xy">Comment</div>
+                        <div className="h-9 w-[90px] rounded-12 bg-[#F5F5F5] center-xy hover:bg-[#f8153b] cursor-pointer hover:text-white">
+                            Share
+                            <Image src={ShareSvg} className="ml-1" />
+                        </div>
+                        <div className="h-9 w-[90px] rounded-12 bg-[#F5F5F5] center-xy hover:bg-[#f8153b] cursor-pointer hover:text-white">
+                            Marketing
+                            <Image src={SaveSvg} className="ml-1 h-4" />
+                        </div>
+                        <div className="h-9 w-[90px] rounded-12 bg-[#F5F5F5] center-xy hover:bg-[#f8153b] cursor-pointer hover:text-white">
+                            Comment
+                            <Image src={CommentSvg} className="ml-1" />
+                        </div>
                     </div>
 
                     {/* User */}
@@ -65,17 +90,18 @@ const Single = ({ params }) => {
                                 <p className="text-[14px]">{obj.user.name || 'Joshua Himmich'}</p>
                                 <p className="text-[12px] opacity-75">27 Posts</p>
                             </div>
-                            <button className="bg-[#F81539BF] rounded-12 h-10 w-20 gap-1 center-xy cursor-pointer">
+                            <button className="bg-[#F81539BF] hover:bg-[#f8153b] rounded-12 h-10 w-20 gap-1 center-xy cursor-pointer">
                                 <p className="text-[20px] text-white">+</p>
                                 <p className="text-[14px] text-white">Follow</p>
                             </button>
                         </div>
                     </div>
 
+                    {/* Tags */}
                     <div className="h-[150px] flex flex-col justify-between w-full rounded-12 bg-[#F5F5F5] px-3 py-4">
                         <Tag text={'Tag'} style={'text-[16px]'} />
-                        <div className="flex flex-wrap gap-2 pt-2 opacity-75 font-medium overflow-hidden text-[12px]">
-                            {tags.map(i => <p>{i}</p>)}
+                        <div className="flex flex-wrap gap-2 pt-2 opacity-75 font-medium overflow-hidden text-[12px] cursor-pointer">
+                            {tags.map(i => <p className="hover:text-[#f8153b]">{i}</p>)}
                         </div>
                     </div>
 

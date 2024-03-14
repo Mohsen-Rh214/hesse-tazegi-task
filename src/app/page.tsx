@@ -20,8 +20,13 @@ export default function Home() {
           </Link>
         )}
 
-        <Slider data={data1} />
-
+        <Link
+          href={{
+            pathname: `/single/3}`,
+          }}
+        >
+          <Slider data={data1} />
+        </Link>
       </div>
       <div className="h-[42.5vh] w-[78.75vw] flex flex-col gap-4 pt-7">
         <div className='flex justify-between items-center'>
@@ -31,12 +36,18 @@ export default function Home() {
 
         <div className='flex justify-between'>
           {data2.map(item =>
-            <PopularCard
-              pic={item.picture}
-              desc={item.title}
-              details={item.details}
-              user={item.user}
-            />
+            <Link
+              href={{
+                pathname: `/single/${item.id}`,
+              }}
+            >
+              <PopularCard
+                pic={item.picture}
+                desc={item.title}
+                details={item.details}
+                user={item.user}
+              />
+            </Link>
           )}
         </div>
       </div>

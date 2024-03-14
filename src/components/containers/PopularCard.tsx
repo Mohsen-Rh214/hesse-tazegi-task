@@ -10,7 +10,7 @@ interface props {
 
 const PopularCard = ({ pic, desc, details, user }: props) => {
     return (
-        <div className='w-[18.75vw] py-2 min-h-[36vh] rounded-12 bg-[#FFFF] shadow-md flex flex-col justify-between items-center gap-2 mb-10'>
+        <div className='w-[18.75vw] py-2 min-h-[36vh] rounded-12 bg-[#FFFF] shadow-md flex flex-col justify-between items-center gap-2 mb-10 cursor-pointer'>
             <div className='w-[95%] h-[48.84%] '>
                 <Image
                     src={pic}

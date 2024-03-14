@@ -15,6 +15,11 @@ import Top2 from '@/public/images/single/top2.png'
 import Top3 from '@/public/images/single/top3.png'
 import Top4 from '@/public/images/single/top4.png'
 import Top5 from '@/public/images/single/top5.png'
+import SBoat from '@/public/images/single/single-boat.png'
+import SCar from '@/public/images/single/single-car.png'
+import SFood from '@/public/images/single/single-food.png'
+import SLake from '@/public/images/single/single-lake.png'
+import STech from '@/public/images/single/single-tech.png'
 
 export const data1: Array<data1Types> = [
     {
@@ -65,6 +70,7 @@ export const data2: Array<data2Types> = [
         picture: PopLake,
         title: 'Opening Day Of Boating Season, Seattle WA',
         details: 'Of course the Puget Sound is very watery, and where there is water, there are boats. Today is the Grand Opening of Boating Season when traffic gets stalled in the University District (UW) while the Montlake Bridge',
+        singlePic: SLake,
         user: {
             id: 1,
             name: 'James',
@@ -78,6 +84,7 @@ export const data2: Array<data2Types> = [
         picture: PopTech,
         title: 'How to choose the right laptop for programming',
         details: 'Choosing the right laptop for programming can be a tough process. It’s easy to get confused while researching the various options. There are many different laptop models out there, each with a different set of trade-offs',
+        singlePic: STech,
         user: {
             id: 2,
             name: 'Louis Hamilton',
@@ -91,6 +98,7 @@ export const data2: Array<data2Types> = [
         picture: PopCar,
         title: 'How we built the first real self-driving car',
         details: 'Electric self-driving cars will save millions of lives and significantly accelerate the world’s transition to sustainable energy, but only when',
+        singlePic: SCar,
         user: {
             id: 3,
             name: 'Clara Couilicia',
@@ -104,6 +112,7 @@ export const data2: Array<data2Types> = [
         picture: PopFood,
         title: 'How to Persuade Your Parents to Buy Fast Food',
         details: 'Parents often don’t want to buy fast food. They may be worried that it’s too expensive, unhealthy, or not worth the effort and time.',
+        singlePic: SFood,
         user: {
             id: 4,
             name: 'Jon Kantola',

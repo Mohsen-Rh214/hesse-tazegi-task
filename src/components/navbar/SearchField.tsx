@@ -36,7 +36,7 @@ const SearchField = () => {
                 :
                 <Image
                   src={ThreeDots}
-                  className="cursor-pointer"
+                  className="cursor-pointer select-none"
                 />
               }
             </button>
